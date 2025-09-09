@@ -1,4 +1,4 @@
-#N canvas 1437 204 2560 1464 12;
+#N canvas 1351 91 2560 1464 12;
 #X obj 205 369 comport;
 #X msg 125 316 devices;
 #X obj 212 423 pdchoco/slip_parse;
@@ -7,8 +7,8 @@
 #X msg 354 346 close;
 #X msg 217 286 baud 115200 \, open 7;
 #X floatatom 317 619 5 0 0 0 - - - 0;
-#X obj 219 550 route boutton angle;
-#X obj 183 612 bng 19 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
+#X obj 219 550 route Bouton angle;
+#X obj 183 636 tgl 19 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0 1;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
 #X connect 2 0 3 0;
