@@ -25,5 +25,9 @@ void loop()
   int maLectureBouton = digitalRead(MA_BROCHE_BOUTON);
   // Serial.println(maLectureBouton);
   // Serial.println();
+  monOsc.sendInt("/adresse", MA_BROCHE_BOUTON);
+  int maLectureAnalogique = analogRead(32);
+  monOsc.sendInt("/angle", maLectureAnalogique);
+
   delay(1000);
 }
