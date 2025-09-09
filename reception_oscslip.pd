@@ -1,1 +1,11 @@
-#N canvas 76 76 2560 1464 12;
+#N canvas 1409 293 2560 1464 12;
+#X obj 205 369 comport;
+#X msg 125 316 devices;
+#X msg 206 313 baud 115200;
+#X msg 310 314 open 7;
+#X obj 199 428 print;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X coords 0 0 0.5 0.5 0 0 0;
