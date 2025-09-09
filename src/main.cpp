@@ -5,8 +5,7 @@
 MicroOscSlip<128> monOsc(&Serial);
 
 #define MA_BROCHE_BOUTON 39
-
-// #define MA_BROCHE_ANGLE 32
+#define MA_BROCHE_ANGLE 32
 
 void setup()
 {
@@ -23,11 +22,11 @@ void loop()
   // delay(100);
 
   int maLectureBouton = digitalRead(MA_BROCHE_BOUTON);
-  // Serial.println(maLectureBouton);
-  // Serial.println();
-  monOsc.sendInt("/adresse", MA_BROCHE_BOUTON);
-  int maLectureAnalogique = analogRead(32);
+  //  Serial.println(maLectureBouton);
+  //  Serial.println();
+  monOsc.sendInt("/Bouton", maLectureBouton);
+  int maLectureAnalogique = analogRead(MA_BROCHE_ANGLE);
   monOsc.sendInt("/angle", maLectureAnalogique);
 
-  delay(1000);
+  delay(100);
 }
