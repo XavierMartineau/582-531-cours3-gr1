@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <MicroOscSlip.h>
 #include <FastLED.h>
+CRGB pixelAtom;
 
 #define MA_BROCHE_BOUTON 39
 #define MA_BROCHE_ANGLE 32
@@ -9,12 +10,11 @@
 MicroOscSlip<128> monOsc(&Serial);
 
 // Déclaration d'un tableau de LEDs
-CRGB pixels[NUM_LEDS];
 
 void setup()
 {
   // Initialisation des LEDs
-  FastLED.addLeds<WS2812, LED_PIN, GRB>(pixels, NUM_LEDS);
+  FastLED.addLeds<WS2812, 27, GRB>(&pixelAtom, 7);
 
   pinMode(MA_BROCHE_BOUTON, INPUT);
   Serial.begin(115200);
@@ -31,11 +31,7 @@ void loop()
   monOsc.sendInt("/Bouton", maLectureBouton);
 
   // Animation simple : couleur verte qui change avec le temps
-  int green = millis() % 256;
-  {
-    int pixels = CRGB(0, green, 0); // On met toutes les LEDs au vert variable
-  }
-
+  pixelAtom = CRGB(0, millis() % 256, 0); // Correction ici : utiliser pixelAtom, pas pixels
   FastLED.show();
 
   delay(100); // Petite pause pour limiter la fréquence
