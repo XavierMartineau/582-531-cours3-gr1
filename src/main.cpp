@@ -25,6 +25,7 @@ void loop()
   //  Serial.println(maLectureBouton);
   //  Serial.println();
   monOsc.sendInt("/Bouton", maLectureBouton);
+
   int maLectureAnalogique = analogRead(MA_BROCHE_ANGLE);
   monOsc.sendInt("/angle", maLectureAnalogique);
 
