@@ -23,7 +23,7 @@ void loop()
   // delay(100);
 
   int maLectureBouton = digitalRead(MA_BROCHE_BOUTON);
-  Serial.println(maLectureBouton);
-  Serial.println();
+  // Serial.println(maLectureBouton);
+  // Serial.println();
   delay(1000);
 }
