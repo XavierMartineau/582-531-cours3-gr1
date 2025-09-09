@@ -10,6 +10,7 @@ void setup()
 void loop()
 {
   int maLectureBouton = digitalRead(MA_BROCHE_BOUTON);
-  maLectureBouton = analogRead(MA_BROCHE_BOUTON);
-  Serial.println(MA_BROCHE_BOUTON);
+  Serial.println(maLectureBouton);
+  Serial.println();
+  delay(1000);
 }
